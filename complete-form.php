@@ -16,6 +16,7 @@
         <td><?= $form->input('radio',['name' => 'size', 'value' => 'small']) ?> Small <br/>
             <?= $form->input('radio',['name' => 'size', 'value' => 'medium']) ?> Medium <br/>
             <?= $form->input('radio',['name' => 'size', 'value' => 'large']) ?> Large <br/>
+            <?= $form->input('radio',['name' => 'size', 'value' => 'xlarge']) ?> XLarge <br/>
         </td></tr>
 
     <tr><td>Pick one sweet item:</td>
@@ -27,6 +28,10 @@
                                                         'multiple' => true]) ?></td>
     </tr>
 
+    <tr><td>Pick one drink item:</td>
+        <td><?= $form->select($GLOBALS['drinks'], ['name' => 'drinks']) ?></td>
+    </tr>
+
     <tr><td>Do you want your order delivered?</td>
         <td><?= $form->input('checkbox',['name' => 'delivery', 'value' => 'yes']) ?> Yes
         </td></tr>
@@ -35,8 +40,14 @@
         If you want your order delivered, put your address here:</td>
         <td><?= $form->textarea(['name' => 'comments']) ?></td></tr>
 
-    <tr><td colspan="2" align="center"><?= $form->input('submit', ['value' => 'Order']) ?>
+    <tr><td colspan="2" align="center">
     </td></tr>
 
+    <tr><td>Please enter your email address here:</td>
+        <td><?= $form->textarea(['name' => 'email']) ?></td></tr>
+
+    <tr><td colspan="1" align="center"><?= $form->input('submit', ['value' => 'Order']) ?>
+
+     <input type="reset" class="button standard" value="Clear" /></td></tr>
 </table>
 </form>
